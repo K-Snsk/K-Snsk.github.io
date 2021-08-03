@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>WCB Cafe - CONTACT</title>
+        <meta name="description" content="ブレンドコーヒーとヘルシーなオーガニックフード提供するカフェ">
+        <meta name="viewport" cintent ="width=device-width,initial-scale=1">
+
+        <!-- CSS -->
+
+        <!-- cssリセット -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <!-- googleフォントの読み込み -->
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <!-- cssの読み込み -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- ファビコン -->
+        <link rel="icon" type="image/png" href="image/favicon.png">
+        
+        <!-- Open Graph Protocolの設定 -->
+        <!-- og:url webページのURL -->
+        <meta property="og:url"contact="https://example.com/index.html">
+        <!-- og:type ページの種類（Webサイトまたは記事を指定）-->
+        <meta property="og:type" content ="website">
+        <!-- og:tutle webページのタイトル -->
+        <meta property ="og:title" content="WVB Cafe Home">
+        <!-- og:description webページの説明文 -->
+        <meta property ="og:description" content="おしゃれなカフェでいやされてみませんか？無添加の食材で体の中からリフレッシュ。">
+        <!-- og:image シェアされた時に表示させたい画像 -->
+        <meta property ="og:image" content="https://example.com/image/ogp.jpg">
+    
+    </head>
+    
+    <body>
+        <!-- header作成 -->
+        <div id="contact" class="big-bg">
+            <header class="page-header wrapper">
+                <!-- headerの画像・テキスト -->
+                <h1><a href="index.html"><img class="logo" src="image/logo.svg" alt="WCBカフェホーム"></a></h1>
+                <!-- header内のnavの追加-->
+                <nav>
+                    <!-- 箇条書きリスト -->
+                    <ul class="main-nav">
+                        <!-- 箇条書き一覧 -->
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                     </ul>
+                </nav>
+            </header>
+
+            <!-- お問い合わせフォーム -->
+            <div class="wrapper">
+                <h2 class="page-title">Contact</h2>
+                <form action="#">
+                    <div>
+                        <!-- フォームの名前を付ける -->
+                        <label for="name">お名前</label>
+                        <!-- 入力蘭を設置する -->
+                        <input type="text" id="name" name="your-name">
+                    </div>
+                    <div>
+                        <label for="email">メールアドレス</label>
+                        <input type="email" id="email" neme="your-email">
+                    </div>
+                    <div>
+                        <label for="message">メッセージ</label>
+                        <!-- 複数行入力できる蘭を設置する -->
+                        <textarea name="your-message" id="message"></textarea>
+                    </div>
+                    <!-- 送信ボタンを作成 value:ボタンに表示される文字列を指定 -->
+                    <input type="submit" class="button" value="送信">
+                </form>
+            </div><!-- /.wrapper -->
+        </div><!-- /#menu -->
+
+        <section id="location">
+            <div class="wrapper">
+                
+                <div class="location-info">
+                    <h3 class="sub-title">カフェ 東駅前店</h3>
+                    <p>
+                        <!-- brで改行 -->
+                        住所：東京都〇〇区<br>
+                        〇〇000ー22-1<br>
+                        〇〇〇〇<br>
+                        電話：03-1111-2222 <br>
+                        営業時間：10:00~24:00 <br>
+                        休日：水曜
+                    </p>
+                </div><!-- /.location-info-->
+                
+                <div class="lovation-map">
+                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1G1dcjkvOjMXHRfU0OC-o2AL0ItQSzKpe" width="640" height="480"></iframe>
+                </div><!-- /.lovation-map-->
+            
+            </div><!-- wapper-->
+        </section><!-- /#location-->
+        
+        <section id="sns">
+            <div class="wrapper">
+                <div class="sns-box">
+                    <h3 class="sub-title">Facebook</h3>
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=315&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+                        width="340" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                
+                <div class="sns-box">
+                    <h3 class="sub-title">Twitter</h3>
+                    <a class="twitter-timeline" data-height="315" href="https://twitter.com/BarackObama?ref_src=twsrc%5Etfw">Tweets by
+                        BarackObama</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+
+                <div class="sns-box">
+                    <h3 class="sub-title">Youtube</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_NwEOuo8_iM" title="YouTube video player"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div><!-- /.wrapper -->
+        </section><!-- /#sns -->
+
+        <!-- フッターの作成-->
+        <footer>
+            <div class="wrapper">
+                <!-- small:免責や著作権などの注釈を表すタグ　＆copy:ブラウザで©︎と表示さセル -->
+                <p><small>&copy; 2019 Manabox</small></p>
+            </div>
+        </footer>
+    </body>
+</html>
