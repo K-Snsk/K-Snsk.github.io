@@ -1,0 +1,503 @@
+/* コードの文字化けを防ぐ*/
+@charset "UTF-8";
+
+/*　共通部分
+------------------*/
+
+/* 文字サイズの設定 */
+html {
+    font-size: 100%;
+}
+
+/* 書体の指定・行の高さの指定・色の指定*/
+body {
+        font-family: "Yu Gothic Medium","遊ゴシック Medium",YuGothic,"游ゴシック体","ヒラギノ角ゴ Pro W3",sans-serif;
+    line-height: 1.7;
+        color: #432;
+}  
+/* <a>タグの傍線の指定 */
+a {
+    text-decoration: none;
+}
+/* 画像の大きさの指定 */
+img {
+    max-width: 100%;
+}
+
+/* HEADER
+------------------*/
+/* logoクラスの調整 */
+.logo {
+    width: 210px;
+    margin-top: 14px;
+}
+/* main-navクラスの調整*/
+.main-nav {
+    /* 横並びにする */
+    display: flex;
+    /* フォントサイズの変更 html要素に指定されたサイズを基準*/
+    font-size: 1.25rem;
+    /* テキストの指定 transform:大文字小文字の表示を指定するプロパティ/uppercase:全ての文字を太文字に変換 */
+    text-transform: uppercase;
+    margin-top: 34px;
+    /* リスト要素の先頭マークをなくす */
+    list-style: none;
+}
+.main-nav li {
+    margin-left: 36px;
+}
+.main-nav a {
+    color: #432;
+}
+.main-nav a:hover {
+    color: #0db;
+}
+
+/* page-headerクラスの調整 */
+.page-header{
+    display: flex; /* 横並び */
+    justify-content: space-between; /* 両端の設置の指定 */
+}
+/* wrapperクラスの調整 */
+.wrapper {
+    max-width: 1100px; /* 横幅最大100px */
+    margin: 0 auto; /* 中央に配置 */
+    padding: 0 4%; /* スマホ向け余白の指定 */
+}
+
+/* HOME
+-----------------*/
+.home-content {
+    /* テキストを中央に配置 */
+    text-align: center;
+    margin-top: 10%;
+}
+.home-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 42px;
+}
+
+/* 見出し */
+.page-title {
+    font-size: 5rem;
+    /* フォントの指定 */
+    font-family: 'Philosopher',serif;
+    /* テキストの指定 transform:大文字小文字の表示を指定するプロパティ/uppercase:全ての文字を太文字に変換 */
+    text-transform: uppercase;
+    /* フォントの太さを指定　normal:通常 */
+    font-weight: normal;
+}
+
+/* ボタン */
+.button {
+    font-size: 1.375rem;
+    background: #0bd;
+    color: #fff;
+    /* ボタンの角を丸める */
+    border-radius: 5px;
+    padding: 18px 32px;
+}
+/* カーソルをボタンに重ねた時の色を指定 */
+.button:hover {
+    background: #0090aa;
+}
+
+/* 大きな背景画像 */
+.big-bg {
+    /* 画面いっぱいに比率を保ったまま画像を広げる */
+    background-size: cover;
+    /* 画像を配置する一を設定 */
+    background-position: center top;
+}
+#home {
+    /* 背景画像の指定 linear-gradient:「,」で区切って背景画像にブレンドモードでグラデーションを重ねる*/
+    background-image: url(../image/main-bg.jpg);/*,linear-gradient(#c9ffbf,#ffafbd);*/
+    background-color: #0db;
+    /* ブレンドモードの指定 */
+    /*background-blend-mode: luminosity; */
+    /*画像の高さの指定 vh:「viewport width」ビューポートの幅を基準にする　px(vh)=800→50vh=400px */
+    min-height: 100vh;
+}
+#home .page-title {
+    /* テキストの大文字小文字指定 none:指定なし */
+    text-transform: none;
+}
+
+/* NEWS
+-------------------------*/
+#news {
+    /* 画像の指定 */
+    background-image: url(../image/news-bg.jpg);
+    height: 270px;
+    margin-bottom: 40px;
+}
+#news .page-title {
+    /* テキストを中央に指定 */
+    text-align: center;
+}
+
+/* footer
+--------------------------*/
+footer {
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p {
+    color: #fff;
+    /* rem:html要素のフォントサイズを基準に計算　16px→1rem(デフォルト) */
+    font-size: 0.875rem;
+}
+
+/* 記事部分 */
+article {
+    width: 60%;
+    /* display:flexで横並びにした順序を変える */
+    order: 2;
+}
+
+/* サイドバー */
+aside {
+    width: 22%;
+    order: 3;
+}
+
+/* 新メニュー登場 */
+.ad {
+    order: 1;
+}
+
+.news-contents {
+    /* 横並びの指定 */
+    display: flex;
+    /* 隣り合う要素の間隔を等しく配列する */
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+/* articleの装飾 */
+.post-info {
+    /* 本来の位置に対から相対位置への配置 */
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+.post-data{
+    background: #0bd;
+    /* 角を丸める */
+    border-radius: 50%;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    /* rem:html要素のフォントサイズを基準に計算　16px→1rem(デフォルト) */
+    font-size: 1.625rem;
+    /* 中央配置 */
+    text-align: center;
+    /* post-infoからの絶対位置 */
+    position: absolute;
+    top: 0;
+    padding-top: 10px;
+}
+/* span部にだけ装飾 */
+.post-date span {
+    /* rem:html要素のフォントサイズを基準に計算　16px→1rem(デフォルト) */
+    font-size: 1rem;
+    /* 線の指定, .5:透明度の指定=50%の半透明　solid:1本線 */
+    border-top: 1px rgba(255, 255, 255, .5) solid;
+    padding-top: 6px;
+    /* ブロックとして認識されるようにになり、幅や高さの指定などが行えるようになる */
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+.post-title {
+    font-family: "Yu Mincho","Yumincho",serif;
+    font-size: 2rem;
+    /* フォントの太さ */
+    font-weight: normal;
+}
+.post-title,
+.post-cat {
+    /* leftで位置の調整 */
+    margin-left: 120px;
+}
+article img {
+    margin-bottom: 20px;
+}
+article p {
+    margin-bottom: 1rem;
+}
+.sub-title {
+    font-size: 1.375rem;
+    /* 上　左右　下の順番 */
+    padding: 0 8px 8px;
+    /* 下線の設定 */
+    border-bottom: 2px #0bd solid;
+    /* フォントの太さ */
+    font-weight: normal;
+}
+aside p {
+    /* paddingで余白をつける */
+    padding: 12px 10px;
+}
+.sub-menu {
+    margin-bottom: 60px;
+    /* リストの赤いマークを非表示 */
+    list-style: none;
+}
+.sub-menu li{
+    /* 1px線を1本 */
+    border-bottom: 1px #ddd solid;
+}
+.sub-menu a {
+    color: #432;
+    padding: 10px;
+    /* ブロック化,リンクのクリックできる幅を広げる */
+    display: block;
+}
+/* カーソルを合わせた時のカラー */
+.sub-menu a:hover {
+    color: #0bd;
+}
+
+/* モバイル版
+--------------------*/
+/* メディアクエリー:表示された画面サイズに合わせてCSSを切り替える */
+@media (max-width: 800px){
+    .page-title {
+        font-size: 2.5rem;
+    }
+    /* header */
+    .main-nav {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    .main-nav li {
+        margin: 0 20px;
+    }
+    /* home */
+    .home-content {
+        margin-top: 20%;
+    }
+    .page-header {
+        /* flex-direction:どの方向に並べるかを選ぶ ,colum:縦に並べる */
+        flex-direction: column;
+        /* 画面中央に並べる */
+        align-items: center;
+    }
+    /* news */
+    .news-contents {
+        flex-direction: column;
+    }
+    article,
+    aside {
+        width: 100%;
+    }
+    #news .page-title {
+        margin-top: 30px;
+    }
+    aside {
+        margin-top: 60px;
+    }
+    .post-info {
+        margin-bottom: 30px;
+    }
+    .post-date {
+        width: 70px;
+        height: 70px;
+        font-size: 1rem;
+    }
+    .post-date span {
+        font-size: 0.875rem;
+        padding-top: 2px;
+    }
+    .post-title {
+        font-size: 1.375rem;
+    }
+    .post-cat {
+        font-size: 0.875rem;
+        margin-top: 10px;
+    }
+    .post-title,
+    .post-cat {
+        margin-left: 120px;
+    }
+
+    /* MENU */
+    .menu-content {
+        margin-top: 20%;
+    }
+    .big-box {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    .big-box img {
+        height: auto;
+    }
+    /* CONTACT */
+    #contact .page-title {
+        margin-top: 40px;
+    }
+
+    /* フォーム */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        max-width: 100%;
+    }
+
+    /* 店舗情報・地図 / sns */
+    #location.wrapper,
+    #sns.wrapper {
+        /* flex-direction:どの方向に並べるかを選ぶ ,column:縦に並べる */
+        flex-direction: column;
+    }
+    .location-info,
+    .location-map,
+    .sns-box {
+        width: 100%;
+    }
+    .sns-box {
+        margin-bottom: 30px;
+    }
+
+ 
+}
+/* MENU
+    ----------------------------*/
+    #menu {
+        background-image: url(../image/menu-bg.jpg);
+        /* ビューポートの高さに対しての割合 */
+        min-height: 100vh;
+    }
+    .menu-content {
+        max-width: 560px;
+        margin-top: 10%;
+    }
+    .menu-content .page-title {
+        text-align: center;
+    }
+    .menu-content p {
+        font-size: 1,125rem;
+        margin: 10px 0 0;
+    }
+    .grid {
+        /* diisplay:gridでタイル型に並ぶように指定 */
+        display: grid;
+        /* 要素同士の余白 */
+        gap: 26px;
+        /* 1:1:1の割合で1列に3つの要素を横に並べる */
+        /* frを使用すると幅が固定されず、画面幅に合わせて伸縮できる */
+
+        /* grid-template-columns: 1fr 1fr 1fr; */
+
+        /* 同じ数値が並ぶ時はrepeat関数を使用する */
+        /* repeat(繰り返す回数, 要素hの幅) */
+        /* minmax：画像の最大値と最小値を決める */
+        /* auto-fit:要素を折り返しながら親要素の余ったスペースが埋まっていく */
+        grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+        margin-top: 6%;
+        margin-bottom: 50px;
+    }
+
+    /* 特定の写真だけ大きくする */
+    .big-box {
+        /* column:横の範囲の指定 */
+        /* 1/3:始まりのライン/終わりのライン */
+        grid-column: 1/3;
+        /* 縦の範囲の指定 */
+        grid-row: 1/3;
+    }
+    .big-box img {
+        height: 94%;
+        width: 100%;
+        /* 画像のトリミングをして歪みを無くす */
+        object-fit: cover;
+    }
+
+    /* CONTACT
+    --------------------------*/
+    #contact {
+        /* 背景に画像を設置 */
+        background-image: url(../image/contact-bg.jpg);
+        min-height: 100vh;
+    }
+
+    /* フォーム */
+    form div {
+        margin-bottom: 14px;
+    }
+    label {
+        font-size: 1.125rem;
+        margin-bottom: 10px;
+        display: block;
+    }
+    /* 属性の指定 */
+    input[type="text"],
+    input[type="email"],
+
+    textarea {
+        /* 半透明の指定 */
+        background: rgba(255, 255, 255, .5);
+        /* 一本線 */
+        border: 1px #fff solid;
+        /* 角を丸める */
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1rem;
+    }
+    /* 属性の指定 */
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+        max-width: 240px;
+    }
+    textarea {
+        width: 100%;
+        max-width: 480px;
+        height: 6rem;
+    }
+    input[type="submit"] {
+        border: none;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    /* 店舗情報・地図 */
+    #location {
+        padding: 4% 0;
+    }
+    #location .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .location-info {
+        width: 22%;
+    }
+    .location-info p {
+        padding: 12px 10px;
+    }
+    .locaton-map {
+        width: 74%;
+    }
+
+    /* iframe */
+    iframe {
+        width: 100%;
+    }
+
+    /* sns */
+    #sns {
+        background: #faf7f0;
+        padding: 4% 0;
+    }
+    #sns .wrapper {
+        display: flex; 
+        justify-content: space-between;
+    }
+    #sns.sub-title {
+        margin-bottom: 30px;
+    }
+    .sns-box {
+        width: 30%;
+    }
